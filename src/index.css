@@ -1,0 +1,47 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background: white;
+  
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* CSS để ẩn icon "mắt" trong các trường nhập mật khẩu */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear {
+  display: none;
+}
+
+.item{
+  @apply relative text-gray-500 font-mono font-bold tracking-[1px] hover:text-black
+}
+.item::after{
+  @apply content-[''] bg-baseGreen h-[3px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300
+}
+
+.item:hover::after{
+  @apply w-[100%]
+}
+
+ .lh-button {
+  @apply text-center uppercase tracking-wider py-4 px-8 text-[13px] font-semibold cursor-pointer rounded-md hover:bg-opacity-90 bg-baseOrange text-white w-max
+}
+
+
+.responsive-type-animation {
+  font-size: 56px;
+}
+
+/* Media query cho màn hình md trở xuống */
+@media (max-width: 768px) {
+  .responsive-type-animation {
+    font-size: 32px;
+  }
+}
